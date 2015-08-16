@@ -5,6 +5,10 @@ class Post < ActiveRecord::Base
 	validates :title,:contact,:content, presence: true
 
   
+
+  	mount_uploader :postpic, PostpicUploader
+
+
 filterrific(
     default_filter_params: { sorted_by: 'created_at_desc' },
     available_filters: [
