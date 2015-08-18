@@ -61,6 +61,7 @@ filterrific(
       		['Cars for Sale', 'Cars for Sale'],
       		['Properties for Sale', 'Properties for Sale'],
       		['Job Vacancies', 'Jobs'],
+      		['Something Else', 'Something Else']
 
     	]
     end

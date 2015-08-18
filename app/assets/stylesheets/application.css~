@@ -25,10 +25,12 @@
     vertical-align: center; 
     padding-top: 0px;
     padding-bottom: 0px;
-    font-size:      3em;
+    font-size:      2em;
 }
 
 tr.hover {
    cursor: pointer;
    /* whatever other hover styles you want */
 }
+
+#= require social-share-button

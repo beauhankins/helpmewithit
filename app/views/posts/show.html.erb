@@ -17,7 +17,7 @@
 <hr>
 <p>
   <strong></strong>
-  <%= @post.content %>
+  <%= @post.content.html_safe %>
 </p>
 
 
@@ -26,6 +26,8 @@
 <hr><h4>Attached Image</h4>
 <%= image_tag @post.postpic_url(:standard) %><br /><% end %>
 <br>
+<b>Share This Ad</b>
+<%= social_share_button_tag(@post.title) %>
 <p>
   <strong>Category:</strong>
   <%= @post.category %>
