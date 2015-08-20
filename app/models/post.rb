@@ -28,7 +28,10 @@ filterrific(
   pg_search_scope :search_query, 
   :against => [:content, :title], 
   :using => [:tsearch],
-  :order_within_rank => "posts.updated_at DESC"
+  :order_within_rank => "posts.updated_at DESC",
+  :using =>{
+  	:tsearch => {:prefix => true}
+  }
 
    scope :sorted_by, lambda { |sort_option|
     # extract the sort direction from the param value.
