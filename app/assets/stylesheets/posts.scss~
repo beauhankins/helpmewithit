@@ -4,7 +4,8 @@
 .btn-post { 
   color: #FFFFFF; 
   background-color: #4DB7DE; 
-  border-color: #000000; 
+  border: 1px solid #31acd9;
+
 } 
  
 .btn-post:hover, 
@@ -13,8 +14,7 @@
 .btn-post.active, 
 .open .dropdown-toggle.btn-post { 
   color: #FFFFFF; 
-  background-color: #0D1D85; 
-  border-color: #000000; 
+  background-color: #134AD6; 
 } 
  
 .btn-post:active, 
