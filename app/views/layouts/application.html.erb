@@ -28,12 +28,16 @@
         <!-- Collection of nav links and other content for toggling -->
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
+                <li class='glyphicon glyphicon-home'><a href="/" >Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/news">News</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-        <%= link_to 'POST AN AD', new_post_path, class:"btn btn-post btn-lg" %>
+                <%= link_to new_post_path, class: "btn btn-post btn-lg"  do %>
+<div class="glyphicon glyphicon-plus"> Post an Ad </div>
+<%end%>
+
+
         
       </ul>
         </div>
