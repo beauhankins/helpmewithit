@@ -55,7 +55,7 @@
 
 <script>
 
-$('.ad_row').click( function() {
+$('tr').not('thead tr').click( function() {
     window.location = $(this).find('a').attr('href');
 }).hover( function() {
     $(this).toggleClass('hover');
