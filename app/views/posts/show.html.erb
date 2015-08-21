@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+<div class='col-md-8 col-md-offset-2'>
 
-
-
-
-
-<div class='well'>
-  <h4><strong>
+  <h3><strong>
   <%= @post.title %></strong>
-  </h4>
-</div>
+  </h3>
+
+
 
 <p>
   <strong>Contact Info:</strong>
@@ -32,5 +30,7 @@
   <strong>Category:</strong>
   <%= @post.category %>
 </p>
-<%= link_to 'Back', posts_path %>
-
+<div align="center">
+<%= link_to 'Back', posts_path, class: "btn btn-block btn-default" %>
+</div>
+</div>

@@ -16,19 +16,8 @@
  *= require_self
  */
 
-.navbar-brand,
-.logo-holder{
-  width: 220px;
-  height: 120px;
-}
-.navbar-nav li a {
-    line-height: 120px;
-    height: 120px;
-    vertical-align: center; 
-    padding-top: 0px;
-    padding-bottom: 0px;
-    font-size:      2em;
-}
+
+
 
 tr.hover {
    cursor: pointer;

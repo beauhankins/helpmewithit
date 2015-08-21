@@ -5,13 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
+ 
   <meta name="description" content="Fiji's biggest free classifieds website. Whether you're in Suva, Nadi, Lautoka or Savusavu, we help you find a new car, a job, or a new house today! ">
   <%= csrf_meta_tags %>
   <meta name="keywords" content="Fiji, Viti Levu, Vanua Levu, free, classifieds, vacancy, for sale, jobs, houses, land, cars, autos" />
 </head>
 
 <body>
-<div class="container">
+
 <div id="top-nav">
 
 
@@ -24,7 +25,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div class="logo-holder"><a href="/" class="navbar-brand"><%= image_tag 'matelogohead.png',size:"200x100"%></a></div>
+            <div class="logo-holder"><a href="/" class="navbar-brand"><%= image_tag 'matelogo.png',size:"170x70"%></a></div>
         	</div>
         <!-- Collection of nav links and other content for toggling -->
         <div id="navbarCollapse" class="collapse navbar-collapse">
@@ -45,10 +46,10 @@
 
     </nav>
 </div>
-
+<div class="container">
 
 <%= yield %>
 </div>
 </body>
-<footer><p align='center'>Built and used locally in Fiji</p></footer>
+<footer><p align='center'>Made in Fiji</p></footer>
 </html>
