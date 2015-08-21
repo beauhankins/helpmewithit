@@ -1,4 +1,9 @@
 .navbar-default {
+  /* BoxShadow */
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+  /* highlights */
   background-color: #4db7de;
   border-color: #31acd9;
   background-image: -webkit-gradient(linear, left 0%, left 100%, from(#78c8e6), to(#4db7de));
@@ -7,6 +12,7 @@
   background-image: linear-gradient(to bottom, #78c8e6 0%, #4db7de 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff78c8e6', endColorstr='#ff4db7de', GradientType=0);
+
 }
 .navbar-default .navbar-brand {
   color: #ffffff;
