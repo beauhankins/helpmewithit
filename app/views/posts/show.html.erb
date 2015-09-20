@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
+
+
+<% content_for :page_title do
+  @post.title
+end %>
+
 <div class="container">
 <div class='col-md-8 col-md-offset-2'>
 
