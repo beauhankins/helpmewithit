@@ -15,5 +15,5 @@
 * Nokogiri(For ad aggregation)
 * Carrierwave/Cloudinary(Pic uploads and hosting)
 
-####A live demo of this project can be seen here https://helpmewithit.herokuapp.com/
+####A live demo of this project can be seen here http://helpmewithit.herokuapp.com/
 
