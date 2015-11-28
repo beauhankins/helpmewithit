@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook', '~> 1.4.1'
+
+
+
+
 gem 'social-share-button'
 gem 'tinymce-rails'
 gem 'carrierwave'
