@@ -8,6 +8,7 @@ gem 'pg_search' #full text search
 gem 'kaminari' #pagination
 gem 'filterrific'
 gem 'thin'
+gem 'tzinfo-data'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
