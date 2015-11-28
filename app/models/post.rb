@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
 	include PgSearch
 
-	POST_TYPES=['Jobs', 'Cars for Sale', 'Properties for Sale', 'Things for Sale', 'Something Else']
+	POST_TYPES= %w[Cleaning Pets Cooking Shopping Transport Gardening Technology Admin Languages Caring Virtual Handyman]
 	validates :title,:contact,:content, presence: true
 
   
@@ -76,12 +76,20 @@ filterrific(
   
   def self.options_for_post_category
     	[	['Any' , '%'],
-      		['Things for Sale', 'Things for Sale'],
-      		['Cars for Sale', 'Cars for Sale'],
-      		['Properties for Sale', 'Properties for Sale'],
-      		['Job Vacancies', 'Jobs'],
-      		['Something Else', 'Something Else']
+      		['Cleaning', 'Cleaning'],
+      		['Pets', 'Pets'],
+      		['Cooking', 'Cooking'],
+      		['Shopping', 'Shopping'],
+      		['Transport', 'Transport'],
+          ['Gardening','Gardening'],
+          ['Technology','Technology'],
+          ['Personal Admin','Admin'],
+          ['Language','Languages'],
+          ['Caring','Caring'],
+          ['Virtual','Virtual'],
+          ['Handyman','Handyman']
     	]
+
     end
   def self.options_for_post_date
       [   ['Any' , ''],
