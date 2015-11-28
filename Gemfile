@@ -16,6 +16,7 @@ gem 'kaminari' #pagination
 gem 'filterrific'
 gem 'thin'
 gem 'tzinfo-data'
+gem 'bcrypt'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

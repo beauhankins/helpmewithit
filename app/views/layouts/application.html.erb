@@ -43,12 +43,19 @@
             <ul class="nav navbar-nav">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
-                <li><a href="/news">News</a></li>
+                <% if can? :update, User %>
+                  <li><a href="/users/registrations/moderate?approved=false">Moderate</a></li>
+                <% end %>
+                <% if cannot? :update, Post %>
+                  <li><a href="/users/sign_in">Sign In</a></li>
+                <% end %>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <%= link_to new_post_path, class: "btn btn-post btn-lg"  do %>
-                <div> + Post an Ad </div>
-                <%end%>
+                <% if can? :update, Post %>
+                  <%= link_to new_post_path, class: "btn btn-post btn-lg"  do %>
+                  <div> + Post an Ad </div>
+                  <%end%>
+                <% end %>
             </ul>
         </div>
 

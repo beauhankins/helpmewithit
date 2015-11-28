@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
   
-<<<<<<< HEAD
+
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
-=======
-  devise_for :users
->>>>>>> 9bd01bae019db11e4074e7926a75acc0cb995c16
+
+
   get '/news' => 'static_pages#news'
   get '/about' => 'static_pages#about'
+
+  get '/users/registrations/moderate' => 'users/registrations#moderate'
+  get '/users/:id/approve' => 'users/registrations#approve_user', as: 'approve_user'
 
  root 'posts#index'
 
   resources :posts
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
