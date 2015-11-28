@@ -52,9 +52,6 @@ gem 'mailboxer'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Devise for Authentication
-gem 'devise'
-
 # CanCan for Authorization
 gem 'cancancan', '~> 1.10'
 

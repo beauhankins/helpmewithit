@@ -14,3 +14,4 @@
 /config/cloudinary.yml
 
 /Gemfile.lock
+/vendor/bundle
