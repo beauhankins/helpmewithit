@@ -1,22 +1,9 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-<<<<<<< HEAD
+
   config.omniauth :facebook, "1668833896697293", "be89d6238a9c4c884c02136494ec3f28", info_fields: 'email,name,first_name,last_name,gender'
 
-
-=======
-  # The secret key used by Devise. Devise uses this key to generate
->>>>>>> 9bd01bae019db11e4074e7926a75acc0cb995c16
-  # random tokens. Changing this key will render invalid all existing
-  # confirmation, reset password and unlock tokens in the database.
-  # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
-  # by default. You can change it below and use your own secret key.
-<<<<<<< HEAD
-  # config.secret_key = '573ddd01ad66b77120add0efafc4d8b17edf49d9ab1f16b0ae9b065a8f9d263b0934dd3097a3a974d6791188ad6a2cdf9e33d7c535f8646d78057d1da02f58f9'
-=======
-  # config.secret_key = 'f3c13f0970cbbcaffe3b97037d48bdde097f5aa5aef54fa11100d4d1a08001736cc8f11a5b56fa927c23df95de1f369a414c0aa37a86d59128f3167cececc384'
->>>>>>> 9bd01bae019db11e4074e7926a75acc0cb995c16
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -32,7 +19,7 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-<<<<<<< HEAD
+
   config.case_insensitive_keys = [ :email ]
   config.strip_whitespace_keys = [ :email ]
   config.skip_session_storage = [:http_auth]
@@ -42,8 +29,7 @@ Devise.setup do |config|
   config.password_length = 1..128
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
-=======
->>>>>>> 9bd01bae019db11e4074e7926a75acc0cb995c16
+
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -120,12 +106,7 @@ Devise.setup do |config|
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
   config.stretches = Rails.env.test? ? 1 : 10
 
-  # Setup a pepper to generate the encrypted password.
-<<<<<<< HEAD
-  # config.pepper = 'd02287ca8ee47f0a9a3571ac91ce2cb9b3c271dc1bdb1a294adb590ebda4b0df46c2bb87392626eca43f178606a10d4ec9548223aaf330e56ed6431b2e141226'
-=======
-  # config.pepper = '4317377d849cc5f75a821fc1e96d19aecfb91c99853a34fe54cb79abf6754f2faa9a2059b7b42ba850a36e58298d8699f5366fa107582435a2a9d522af8567d0'
->>>>>>> 9bd01bae019db11e4074e7926a75acc0cb995c16
+
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
