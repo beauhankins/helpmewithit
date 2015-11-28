@@ -1,11 +1,4 @@
-#Mate Na Lavo - A Free Classifieds Ad Platform 
-
-**The goal of the application is to allow users to post ads and to be able to query relevant ones**
-
-##Main Features
-
-1. Allows free posting of ads with picture upload
-2. Index and allow searching of ads uploaded from additional local sources
+#Help Me With It
 
 ###Built with 
 
@@ -22,12 +15,5 @@
 * Nokogiri(For ad aggregation)
 * Carrierwave/Cloudinary(Pic uploads and hosting)
 
-####A live demo of this project can be seen here https://matenalavo.herokuapp.com/
-
-####Known limitations
-Need intelligent parsing of ads from local sources. 
-
-
-
-
+####A live demo of this project can be seen here https://helpmewithit.herokuapp.com/
 
