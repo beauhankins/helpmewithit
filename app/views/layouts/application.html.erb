@@ -5,9 +5,9 @@
 
 <title>
   <%- if content_for? :page_title -%>
-    <%= yield :page_title %> .. Mate Na Lavo Fiji Classifieds
+    <%= yield :page_title %> .. Help Me With It
     <% else %>
-    Mate Na Lavo Fiji Classifieds
+    Help Me With It
   <% end %>
 </title>
 
@@ -22,6 +22,7 @@
 </head>
 
 <body>
+
 
 <div id="top-nav">
 
@@ -54,6 +55,13 @@
     </nav>
 </div>
 <div class="container-fluid">
+
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
 
 <%= yield %>
 </div>

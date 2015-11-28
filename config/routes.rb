@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   get '/news' => 'static_pages#news'
   get '/about' => 'static_pages#about'
 
