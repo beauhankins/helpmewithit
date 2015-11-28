@@ -29,14 +29,30 @@
     </div>
 
     <div class="sm-col-right mr4">
+      <% if can? :update, User %>
+        <ul class="mt2"><a href="/users/registrations/moderate?approved=false">Moderate</a></ul>
+      <% end %>
+      <% if cannot? :update, Post %>
+        <ul class="mt2"><a href="/users/sign_in">Sign In</a></ul>
+      <% end %>
+      <% if can? :update, Post %>
         <ul class="mt2">
             <%= link_to new_post_path, class: "btn btn-primary bg-navy" do %>
             <div>Post a task</div>
+
             <%end%>
         </ul>
+      <%end%>
     </div>
   </nav>
 <div>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
 <%= yield %>
 </div>
 </body>

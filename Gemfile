@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook', '~> 1.4.1'
+
+
+
+
 gem 'social-share-button'
 gem 'tinymce-rails'
 gem 'carrierwave'
@@ -9,6 +16,7 @@ gem 'kaminari' #pagination
 gem 'filterrific'
 gem 'thin'
 gem 'tzinfo-data'
+gem 'bcrypt'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -43,6 +51,12 @@ gem 'mailboxer'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Devise for Authentication
+gem 'devise'
+
+# CanCan for Authorization
+gem 'cancancan', '~> 1.10'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
