@@ -1,34 +1,29 @@
-<p id="notice"><%= notice %></p>
-
 <%= form_for_filterrific @filterrific do |f| %>
 
-
-  <div class='row' >
-    <div class='col-xs-12 col-md-8 col-md-offset-2' align='center'>
-    <div class="well">
+  <div class='flex bg-white p4' >
+    <div class="flex-auto center nowrap">
       <span class="input-group-btn">
       <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
-      <%= f.text_field(
-        :search_query,
-        :placeholder => "What do you want to find?",
-        class: 'filterrific-periodically-observed input-lg focus',
-        id: 'search-field'
-      )%>
-      <button id="adv-button" type="button" class="btn btn-default btn-lg"><span> &#x2699 </span></button>
-      <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg", id: "search-button") do %>
+      <div class="border-bottom col-4 inline-block">
+        <%= f.text_field(
+          :search_query,
+          :placeholder => "How can you help out?",
+          class: 'h2 col-12 border-none',
+          id: 'search-field'
+        )%>
+      </div>
+      <button id="adv-button" type="button" class="btn btn-primary bg-gray ml1">Filter</button>
+      <%= button_tag(type: 'submit', class: "btn btn-primary bg-green ml1", id: "search-button") do %>
       <span>Search</span>
       <% end %>
       </span>
     </div>
   </div>
-  </div>
 
-
-
-  <div id='adv-options' class='col-xs-12 col-md-8 col-md-offset-2' align='center'>
-    <div align="center"> <h4>Search Filters</h4></div>
+  <div class='bg-white'>
+    <div id='adv-options' class='col-8 mx-auto center'>
+      <span class='mt0'>Search Filters</span>
       <div class='row'>
-
         <div class='col-xs-12 col-md-3' align='center'>
           <p>Sort By</p>
           <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
@@ -44,7 +39,6 @@
           <%= f.select(:post_date, @filterrific.select_options[:post_date]) %>
         </div>
 
-
         <div class='col-xs-12 col-md-3' align='center'>
           <p>Reset Search Filters</p>
           <%= link_to(
@@ -52,10 +46,9 @@
             reset_filterrific_url, class:"btn btn-sm btn-danger"
           ) %>
         </div>
-  </div><!-- hidden div -->
-</div> <!-- row -->
-
-
+      </div>
+    </div>
+  </div>
 
   <%# add an automated spinner to your form when the list is refreshed %>
   <%= render_filterrific_spinner %>
@@ -67,17 +60,6 @@
   locals: { posts: @posts }
 ) %>
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 <script>
 

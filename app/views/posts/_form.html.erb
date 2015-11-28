@@ -1,12 +1,9 @@
-
-
-
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <div id="error_explanation" class="p2 border mb3">
+      <span class="h2 bold">Please fix the following <%= pluralize(@post.errors.count, "error") %>:</span>
 
-      <ul>
+      <ul class="mt2 mb0">
       <% @post.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
@@ -14,30 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title,  style: 'width: 100%', :placeholder => "Headline for your ad"  %>
+  <div class="mb2">
+    <%= f.label :title, class: 'bold' %>
+    <%= f.text_field :title,  class: 'field col-12 mt1', :placeholder => "Headline for your ad"  %>
   </div>
-  <div class="field">
-    <%= f.label :contact %><br>
-    <%= f.text_field :contact, style: 'width: 100%', :placeholder => "Phone and/or email address"  %>
+  <div class="mb2">
+    <%= f.label :contact, class: 'bold' %>
+    <%= f.text_field :contact, class: 'field col-12 mt1', :placeholder => "Phone and/or email address"  %>
   </div>
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.select :category, Post::POST_TYPES,{},:class =>"form-control", style: 'width: 100%'  %>
+  <div class="mb2">
+    <%= f.label :category, class: 'bold' %>
+    <%= f.select :category, Post::POST_TYPES,{},class: 'field col-12 mt1'  %>
   </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content ,class: "tinymce", rows:10, :placeholder => "Your main content goes here. Please include details such as your location(Suva,Nadi,Lautoka,SavuSavu etc)"%>
+  <div class="mb2">
+    <%= f.label :content, class: 'bold' %>
+    <div class="mt1">
+      <%= f.text_area :content , class: 'tinymce col-12 field', rows: 10, :placeholder => "Your main content goes here. Please include details such as your location(Suva,Nadi,Lautoka,SavuSavu etc)"%>
+    </div>
 
   </div>
-<hr><h5>Upload a picture</h5>
-<%= f.file_field :postpic %>
-<hr>
 
-  <div class="actions" align="center">
-  <%= link_to 'Back', posts_path, class: "btn btn-large btn-default" %>
-    <%= f.submit "Post my Ad", class: "btn btn-large btn-primary"%>
+  <span class="block h4 mb1 bold">Upload a picture</span>
+  <%= f.file_field :postpic %>
+
+  <div class="mt4 right-align">
+    <%= f.submit "Post task", class: "btn btn-primary bg-green"%>
   </div>
 
 <% end %>
