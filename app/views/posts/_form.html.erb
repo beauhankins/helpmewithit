@@ -13,22 +13,27 @@
 
   <div class="mb2">
     <%= f.label :title, class: 'bold' %>
-    <%= f.text_field :title,  class: 'field col-12 mt1', :placeholder => "Headline for your ad"  %>
+    <%= f.text_field :title,  class: 'field col-12 mt1', :placeholder => "Task title"  %>
   </div>
   <div class="mb2">
-    <%= f.label :contact, class: 'bold' %>
-    <%= f.text_field :contact, class: 'field col-12 mt1', :placeholder => "Phone and/or email address"  %>
+    <%= f.label :location, class: 'bold' %>
+    <%= f.text_field :location, class: 'field col-12 mt1', :placeholder => "Where do you need help?"  %>
   </div>
   <div class="mb2">
     <%= f.label :category, class: 'bold' %>
     <%= f.select :category, Post::POST_TYPES,{},class: 'field col-12 mt1'  %>
   </div>
   <div class="mb2">
-    <%= f.label :content, class: 'bold' %>
+    <%= f.label :description, class: 'bold' %>
     <div class="mt1">
-      <%= f.text_area :content , class: 'tinymce col-12 field', rows: 10, :placeholder => "Your main content goes here. Please include details such as your location(Suva,Nadi,Lautoka,SavuSavu etc)"%>
+      <%= f.text_area :description, class: 'no-resize col-12 field', rows: 10, :placeholder => "What would you like help with?"%>
     </div>
-
+  </div>
+  <div class="mb2">
+    <%= f.label :explanation, class: 'bold' %>
+    <div class="mt1">
+      <%= f.text_area :explanation, class: 'no-resize col-12 field', rows: 10, :placeholder => "Why do you need help?"%>
+    </div>
   </div>
 
   <span class="block h4 mb1 bold">Upload a picture</span>
