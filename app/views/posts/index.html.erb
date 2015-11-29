@@ -21,30 +21,21 @@
   </div>
 
   <div class='bg-white'>
-    <div id='adv-options' class='col-8 mx-auto center'>
-      <span class='mt0'>Search Filters</span>
-      <div class='row'>
-        <div class='col-xs-12 col-md-3' align='center'>
+    <div id='adv-options' class='col-8 mx-auto'>
+      <div class='clearfix'>
+        <div class='col col-4 p1 mb4'>
           <p>Sort By</p>
-          <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
+          <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by], {}, {class: 'field col-12'}) %>
         </div>
 
-        <div class='col-xs-12 col-md-3' align='center'>
+        <div class='col col-4 p1 mb4'>
           <p>Category</p>
-          <%= f.select(:post_category, @filterrific.select_options[:post_category]) %>
+          <%= f.select(:post_category, @filterrific.select_options[:post_category], {}, {class: 'field col-12'}) %>
         </div>
 
-        <div class='col-xs-12 col-md-3' align='center'>
+        <div class='col col-4 p1 mb4'>
           <p>When Posted</p>
-          <%= f.select(:post_date, @filterrific.select_options[:post_date]) %>
-        </div>
-
-        <div class='col-xs-12 col-md-3' align='center'>
-          <p>Reset Search Filters</p>
-          <%= link_to(
-            'Reset',
-            reset_filterrific_url, class:"btn btn-sm btn-danger"
-          ) %>
+          <%= f.select(:post_date, @filterrific.select_options[:post_date], {}, {class: 'field col-12'}) %>
         </div>
       </div>
     </div>
