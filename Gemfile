@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 
 #authentication
+gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook', '~> 1.4.1'
 

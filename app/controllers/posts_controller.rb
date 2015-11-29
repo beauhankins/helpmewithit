@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource
+  #load_and_authorize_resource
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   #before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
@@ -103,6 +103,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:category,:postpic, :contact, :content, :title, :tag_list)
+      params.require(:post).permit(:category,:postpic, :contact, :content, :title, :tag_list,:task_done)
     end
 end

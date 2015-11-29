@@ -1,8 +1,7 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-
-  config.omniauth :facebook, "1668833896697293", "be89d6238a9c4c884c02136494ec3f28", info_fields: 'email,name,first_name,last_name,gender'
+  config.omniauth :facebook, "1668833896697293", ENV['FACEBOOK_APP_SECRET'], info_fields: 'email,name,first_name,last_name,gender'
 
 
   # ==> Mailer Configuration

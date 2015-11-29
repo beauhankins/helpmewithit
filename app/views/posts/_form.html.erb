@@ -20,6 +20,10 @@
     <%= f.text_field :contact, class: 'field col-12 mt1', :placeholder => "Phone and/or email address"  %>
   </div>
   <div class="mb2">
+    <%= f.label "Task Already Done?" %> <br />
+    <%= f.check_box :task_done %> <br />
+</div>
+  <div class="mb2">
     <%= f.label :category, class: 'bold' %>
     <%= f.select :category, Post::POST_TYPES,{},class: 'field col-12 mt1'  %>
   </div>
