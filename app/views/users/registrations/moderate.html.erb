@@ -1,17 +1,19 @@
-<h1>Users</h1>
+<div class="bg-white mx-auto col-8 p3 mt3">
+  <span class="h1 block mb2">Users</span>
 
-<table>
-	<tr>
-      <th>Name</th>
-	  <th>Email</th>
-	  <th>Approved?</th>
-	</tr>
-  <% @users.each do |user| %>
+  <table>
     <tr>
-      <td><%= user.name %> </td>
-      <td><%= user.email %> </td>
-      <td><%= user.approved %> </td>
-      <td><%= link_to("Approve", approve_user_path(user.id)) %></td>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Approved?</th>
     </tr>
-  <% end %>
-</table>
+    <% @users.each do |user| %>
+      <tr>
+        <td class=<%= user.name ? "" : "gray" %>><%= user.name ? user.name : "(No Name)" %> </td>
+        <td><%= user.email %></td>
+        <td><%= image_tag "#{user.approved}.png", class: 'col-1' %></td>
+        <td><%= link_to("Approve", approve_user_path(user.id)) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

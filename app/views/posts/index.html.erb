@@ -55,10 +55,12 @@
 <% end %><!-- form -->
 
 <div id="filterrific_results">
-<%= render(
-  partial: 'posts/list',
-  locals: { posts: @posts }
-) %>
+  <span class="h2 bold block center py4">Tasks</span>
+
+  <%= render(
+    partial: 'posts/list',
+    locals: { posts: @posts }
+  ) %>
 </div>
 
 <script>
