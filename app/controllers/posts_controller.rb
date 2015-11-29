@@ -4,8 +4,15 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   #before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
 
-  # GET /posts
-  # GET /posts.json
+
+  def local_task
+    if params[:search].present?
+      @posts = Post.near(params[:search])
+    else
+      @posts = nil
+    end
+  end
+
   def index
 
     @filterrific = initialize_filterrific(

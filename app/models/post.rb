@@ -1,4 +1,8 @@
 class Post < ActiveRecord::Base
+
+  geocoded_by :address #can also be an IP address
+  # after_validation :geocode, :if => :address_changed?
+
 	include PgSearch
 
 	POST_TYPES= %w[Cleaning Pets Cooking Shopping Transport Gardening Technology Admin Languages Caring Virtual Handyman]

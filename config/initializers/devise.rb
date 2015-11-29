@@ -1,14 +1,8 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  config.omniauth :facebook, "1668833896697293", "be89d6238a9c4c884c02136494ec3f28", info_fields: 'email,name,first_name,last_name,gender'
+  config.omniauth :facebook, "1668833896697293", ENV['FACEBOOK_APP_SECRET'], info_fields: 'email,name,first_name,last_name,gender'
 
-
-  # random tokens. Changing this key will render invalid all existing
-  # confirmation, reset password and unlock tokens in the database.
-  # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
-  # by default. You can change it below and use your own secret key.
-  # config.secret_key = '573ddd01ad66b77120add0efafc4d8b17edf49d9ab1f16b0ae9b065a8f9d263b0934dd3097a3a974d6791188ad6a2cdf9e33d7c535f8646d78057d1da02f58f9'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -24,6 +18,7 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
+
   config.case_insensitive_keys = [ :email ]
   config.strip_whitespace_keys = [ :email ]
   config.skip_session_storage = [:http_auth]
@@ -33,6 +28,7 @@ Devise.setup do |config|
   config.password_length = 1..128
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
+
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -109,8 +105,7 @@ Devise.setup do |config|
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
   config.stretches = Rails.env.test? ? 1 : 10
 
-  # Setup a pepper to generate the encrypted password.
-  # config.pepper = 'd02287ca8ee47f0a9a3571ac91ce2cb9b3c271dc1bdb1a294adb590ebda4b0df46c2bb87392626eca43f178606a10d4ec9548223aaf330e56ed6431b2e141226'
+
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without

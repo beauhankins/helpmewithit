@@ -16,8 +16,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require filterrific/filterrific-jquery
-//= require_tree .
 //= require jquery.geocomplete
 $(function() {
 $("#geo-input").geocomplete();
 });  
+//= require_tree .
