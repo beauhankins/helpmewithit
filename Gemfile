@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
 
+
+
+
+#authentication
 gem 'omniauth'
 gem 'omniauth-facebook', '~> 1.4.1'
 
-
-
-
+#post stuff
+gem 'geocoder'
 gem 'social-share-button'
 gem 'tinymce-rails'
 gem 'carrierwave'
