@@ -19,9 +19,9 @@ class PostsController < ApplicationController
       Post,
       params[:filterrific],
       :select_options => {
-        sorted_by: Post.options_for_sorted_by,
-        post_category: Post.options_for_post_category,
-        post_date: Post.options_for_post_date
+        sorted_by: Post.active.options_for_sorted_by,
+        post_category: Post.active.options_for_post_category,
+        post_date: Post.active.options_for_post_date
 
       }
     ) or return
@@ -44,10 +44,6 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-  end
-
-  # GET /posts/1/edit
-  def edit
   end
 
   # POST /posts
