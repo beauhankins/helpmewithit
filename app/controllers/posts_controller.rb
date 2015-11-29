@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
       }
     ) or return
-    @posts = @filterrific.find.page(params[:page]).per(7)
+    @posts = @filterrific.find.page(params[:page]).per(18)
 
     respond_to do |format|
       format.html
@@ -103,6 +103,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:category,:postpic, :contact, :content, :title, :tag_list)
+      params.require(:post).permit(:category, :postpic, :description, :explanation, :location, :title, :tag_list)
     end
 end

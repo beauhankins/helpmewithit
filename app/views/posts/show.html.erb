@@ -12,17 +12,20 @@ end %>
 
 
 
-<p><strong>Contact Info:</strong>
-  <%= @post.contact %>
+<p><strong>Location:</strong>
+  <%= @post.location %>
 <br>
 <strong>Posted at:</strong>
 <i><%= (@post.created_at+12*60*60).strftime('%H:%M %a %d %b %Y') %></i></p>
 <hr>
 
 <p><strong></strong>
-  <%= @post.content.html_safe %>
+  <%= @post.description.html_safe %>
 </p>
 
+<p><strong></strong>
+  <%= @post.explanation.html_safe %>
+</p>
 
 
 <% unless @post.postpic_url.nil? %>

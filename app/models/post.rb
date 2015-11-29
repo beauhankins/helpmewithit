@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 	include PgSearch
 
 	POST_TYPES= %w[Cleaning Pets Cooking Shopping Transport Gardening Technology Admin Languages Caring Virtual Handyman]
-	validates :title,:contact,:content, presence: true
+	validates :title, :description, :explanation, :location, presence: true
 
   
 
@@ -30,7 +30,7 @@ filterrific(
   # Please see 'Scope patterns' for scope implementation details.
   
   pg_search_scope :search_query, 
-  :against => [:content, :title], 
+  :against => [:description, :title], 
   :order_within_rank => "posts.updated_at DESC",
   :using =>{
   	:tsearch => {:prefix => true}
@@ -58,9 +58,9 @@ filterrific(
 
 
     def similar_posts
-    query= "SELECT p.id, ts_rank_cd(to_tsvector('english', p.content), replace(plainto_tsquery(original.content)::text, ' & ', ' | ')::tsquery) AS similarity
+    query= "SELECT p.id, ts_rank_cd(to_tsvector('english', p.description), replace(plainto_tsquery(original.description)::text, ' & ', ' | ')::tsquery) AS similarity
             FROM posts p,
-            (SELECT content, id FROM posts WHERE id = ? LIMIT 1) AS original
+            (SELECT description, id FROM posts WHERE id = ? LIMIT 1) AS original
             WHERE p.id != original.id
             ORDER BY similarity DESC
             LIMIT 3;"
@@ -91,7 +91,8 @@ filterrific(
           ['Language','Languages'],
           ['Caring','Caring'],
           ['Virtual','Virtual'],
-          ['Handyman','Handyman']
+          ['Handyman','Handyman'],
+          ['Other','Other']
     	]
 
     end
