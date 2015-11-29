@@ -10,6 +10,7 @@
 	</tr>
   <% @users.each do |user| %>
     <tr>
+      <td><%= user.name %> </td>
       <td><%= user.email %> </td>
       <td><%= user.approved %> </td>
       <td><%= link_to("Approve", approve_user_path(user.id)) %></td>
