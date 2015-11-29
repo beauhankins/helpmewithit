@@ -42,4 +42,5 @@ class User < ActiveRecord::Base
     end
     recoverable
   end
+
 end
