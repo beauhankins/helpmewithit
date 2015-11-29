@@ -5,6 +5,7 @@ class Ability
     user ||= User.new
 
     can :read, Post
+    can :local_task, Post
 
     # TODO: Replace this with proper defined roles
     if user.admin?

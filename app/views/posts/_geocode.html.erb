@@ -1,0 +1,25 @@
+<div class="centered">
+  <h1>Task Finder</h1>
+  <%= form_tag local_tasks_path, :method => :get do %>
+    <p>
+      <%= text_field_tag :search, params[:search],:id => 'geo-input' %>
+      <%= submit_tag "Search Near", :name => nil %>
+    </p>
+  <% end %>
+  <h3>Nearby Tasks</h3>
+  <% if @posts.nil? %>
+   <div class="res"><p>No results</p></div>
+  <% else %>
+  <% @posts.each do |post| %>
+    <p>
+      <div class="res">
+      <b><%= post.title %></b></br>
+         <%= post.address %></br>
+          
+      </div>
+    </p>
+  <% end %>
+  <% end %>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+
+</div>
