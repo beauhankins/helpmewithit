@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
-<title>
-  <%- if content_for? :page_title -%>
-    <%= yield :page_title %> Help Me With It
-    <% else %>
-    Help Me With It
-  <% end %>
-</title>
+  <title>
+    <%- if content_for? :page_title -%>
+      <%= yield :page_title %> Help Me With It
+      <% else %>
+      Help Me With It
+    <% end %>
+  </title>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href="//d2v52k3cl9vedd.cloudfront.net/basscss/7.0.4/basscss.min.css" rel="stylesheet">
@@ -28,29 +26,30 @@
       <a href="/" class="btn"><span class="bold mb0">Help Me With It</span></a>
     </div>
 
-    <div class="sm-col-right mr4">
+    <div class="sm-col-right mr4 py2">
       <% if can? :update, User %>
-        <ul class="mt2"><a href="/users/registrations/moderate?approved=false">Moderate</a></ul>
+        <ul class="btn"><a href="/users/registrations/moderate?approved=false">Moderate</a></ul>
       <% end %>
       <% if cannot? :update, Post %>
-        <ul class="mt2"><a href="/users/sign_in">Sign In</a></ul>
+        <ul class="btn"><a href="/users/sign_in">Sign In</a></ul>
       <% end %>
       <% if can? :update, Post %>
-        <ul class="mt2">
-            <%= link_to new_post_path, class: "btn btn-primary bg-green" do %>
-            <div>Post a task</div>
-
-            <%end%>
-        </ul>
+        <%= link_to new_post_path, class: "btn btn-primary bg-green" do %>
+          <div>Post a task</div>
+        <%end%>
       <%end%>
     </div>
   </nav>
 <div>
 <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
+  <div class="bg-green">
+    <p class="center col-8 mb0 py1 mx-auto bold block white"><%= notice %></p>
+  </div>
 <% end %>
 <% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
+  <div class="bg-red">
+    <p class="center col-8 mb0 mx-auto py1 bold block white"><%= alert %></p>
+  </div>
 <% end %>
 
 <%= yield %>

@@ -5,14 +5,19 @@
     <% posts.each do |post| %>
       <div class="p2 col-4 border-box">
         <div class="relative p2 bg-white">
-          <div><%= link_to(post.title, post_path(post)) %></div>
-          <div><%= (post.created_at+12*60*60).strftime('%a %d %b %Y') %> </div>
-          <div class="p1 absolute top-0 right-0 col-3"><%= image_tag "categories/#{post.category.parameterize}.png" %></div>
+          <div class=""><%= link_to(post.title, post_path(post)) %></div>
+          <div>
+            <%= post.description %>
+          </div>
+          <div class="mt1 h6 gray">
+            <%= post.location %>
+          </div>
+          <div class="p1 absolute top-0 right-0 col-2"><%= image_tag "categories/#{post.category.parameterize}.png" %></div>
         </div>
       </div>
     <% end %>
 
-    <div id="paginator">
+    <div class="col-12 center p2 mb2">
       <%= paginate @posts, :remote => true %>
     </div>
   </div>

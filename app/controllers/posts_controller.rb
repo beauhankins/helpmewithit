@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
       }
     ) or return
-    @posts = @filterrific.find.page(params[:page]).per(7)
+    @posts = @filterrific.find.page(params[:page]).per(18)
 
     respond_to do |format|
       format.html
