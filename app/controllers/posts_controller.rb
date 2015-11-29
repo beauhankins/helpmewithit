@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  #load_and_authorize_resource
+  load_and_authorize_resource
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   #before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
       }
     ) or return
-    @posts = @filterrific.find.page(params[:page]).per(7)
+    @posts = @filterrific.find.page(params[:page]).per(18)
 
     respond_to do |format|
       format.html
@@ -103,6 +103,10 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
+<<<<<<< HEAD
       params.require(:post).permit(:category,:postpic, :contact, :content, :title, :tag_list,:task_done)
+=======
+      params.require(:post).permit(:category, :postpic, :description, :explanation, :location, :title, :tag_list)
+>>>>>>> 002926a9b3c4e5e48362cfbf9d528bfc6e48f008
     end
 end

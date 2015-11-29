@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :omniauthable, :omniauth_providers => [:facebook]
+  before_save :default_values
 
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -41,6 +42,10 @@ class User < ActiveRecord::Base
       recoverable.send_reset_password_instructions
     end
     recoverable
+  end
+
+  def default_values
+    self.approved = false if self.approved.nil?
   end
 
 end
