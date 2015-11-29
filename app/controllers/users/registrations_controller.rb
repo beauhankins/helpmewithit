@@ -1,12 +1,8 @@
 class Users::RegistrationsController < ApplicationController
-  load_and_authorize_resource :class => false
+  load_and_authorize_resource :class => User
 
   def moderate
-    if params[:approved] == "false"
-      @users = User.where(:approved => false)
-    else
-      @users = User.all
-    end
+    @users = User.all
   end
 
   def approve_user

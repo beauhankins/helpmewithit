@@ -28,7 +28,7 @@
 
     <div class="sm-col-right mr4 py2">
       <% if can? :update, User %>
-        <ul class="btn"><a href="/users/registrations/moderate?approved=false">Moderate</a></ul>
+        <ul class="btn"><a href="/users/registrations/moderate">Moderate</a></ul>
       <% end %>
       <% if cannot? :update, Post %>
         <ul class="btn"><a href="/users/sign_in">Sign In</a></ul>
