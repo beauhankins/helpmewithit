@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
 
+  default_scope where(:task_done => false)
+
   geocoded_by :address #can also be an IP address
   after_validation :geocode, :if => :address_changed?
 

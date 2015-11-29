@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
 
-
-
-
 #authentication
 gem 'omniauth'
 gem 'omniauth-facebook', '~> 1.4.1'
