@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get '/users/registrations/moderate' => 'users/registrations#moderate'
   get '/users/:id/approve' => 'users/registrations#approve_user', as: 'approve_user'
+  get '/sign_out' => 'devise/sessions#destroy'
 
  root 'posts#index'
 

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 #authentication
 gem 'devise'
 gem 'omniauth'
