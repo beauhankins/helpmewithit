@@ -46,10 +46,6 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  # GET /posts/1/edit
-  def edit
-  end
-
   # POST /posts
   # POST /posts.json
   def create
